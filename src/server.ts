@@ -11,5 +11,5 @@ app.use(cors());
 app.use(router);
 
 app.listen(process.env.PORT || 4000, () =>
-    console.log(`Server is running ${process.env.PORT || 4000}`),
+  console.log(`Server is running ${process.env.PORT || 4000}`),
 );
