@@ -24,7 +24,7 @@ class UserValidator {
       role: yup
         .mixed<keyof typeof EnumRoleUser>()
         .oneOf(Object.values(EnumRoleUser))
-        .required('Tipo de usuário é obrigatório'),
+        .required('Type user is required'),
     });
   }
 
