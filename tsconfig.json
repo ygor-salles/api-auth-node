@@ -1,13 +1,20 @@
 {
   "compilerOptions": {
-    "target": "es2016",
+    "target": "es2017",
+    // "allowJs": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "module": "commonjs",
     "esModuleInterop": true,
+    // "noImplicitAny": true,
+    // "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
     "strict": false,
     "strictPropertyInitialization": false,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    // "typeRoots": [
+    //   "./src/@types",
+    //   "node_modules/@types"
+    // ]
   }
 }
