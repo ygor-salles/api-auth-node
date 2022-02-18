@@ -1,5 +1,3 @@
-import { createConnection } from 'typeorm';
+import { createConnection, Connection } from 'typeorm';
 
-createConnection()
-  .then(() => console.log('Database connection successful'))
-  .catch(err => console.log('Database connection failed ->', err.message || err));
+export default async (): Promise<Connection> => createConnection();

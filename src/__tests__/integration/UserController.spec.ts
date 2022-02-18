@@ -34,7 +34,7 @@ let userId: number;
 describe('Users', () => {
   beforeAll(async () => {
     await createConnection();
-    const Login = await request(app).post('/login').send(loginUser);
+    const Login = await request(app).post('/signin').send(loginUser);
     token = Login.body.token;
   });
 
@@ -194,7 +194,7 @@ describe('Users', () => {
   });
 
   it('Should return 400 when searching user by invalid type id', async () => {
-    const response = await request(app).get(`/users/2`).set('Authorization', `bearer ${token}`);
+    const response = await request(app).get(`/users/aaa`).set('Authorization', `bearer ${token}`);
 
     expect(response.status).toBe(400);
     expect(response.body.message).toBe(
@@ -228,7 +228,9 @@ describe('Users', () => {
   });
 
   it('Should return 400 when delete user by invalid type id', async () => {
-    const response = await request(app).delete(`/users/2`).set('Authorization', `bearer ${token}`);
+    const response = await request(app)
+      .delete(`/users/aaa`)
+      .set('Authorization', `bearer ${token}`);
 
     expect(response.status).toBe(400);
     expect(response.body.message).toBe(
