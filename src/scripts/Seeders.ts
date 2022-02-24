@@ -19,7 +19,10 @@ class SeederRun {
         console.log('\n== [Migrations run sucessfully] ==');
 
         await DataSeed.createUsers();
-        console.log('\n== [Seeders run successfully] ==\n');
+        console.log('\n== [Seeders run successfully] ==');
+
+        await connection.close();
+        console.log('\n== [Connection close] ==\n');
       } catch (error) {
         console.log('\nError:', error);
       }
